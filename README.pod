@@ -3,13 +3,6 @@
 
 =head2 IMPORTANT: This is a first round test module. Some settings/options might be broken or missing, use at your own risk. Suggestions and improvements welcome.
 
-
-=head2 Author
-
-    Sarah Fuller
-    sarah@averna.id.au
-
-
 =head2 Puppet ssh server & client module
 
 
@@ -102,6 +95,11 @@ sshd
     escape_char    => "~",
   }
 
+
+=head2 Author
+
+    Sarah Fuller
+    sarah@averna.id.au
 
 =cut
 
