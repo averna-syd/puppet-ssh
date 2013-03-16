@@ -1,7 +1,7 @@
 =pod
 
 
-=head1 IMPORTANT: This is a first round test module. Some settings/options might be broken or missing, use at your own risk. Suggestions and improvements welcome.
+=head2 IMPORTANT: This is a first round test module. Some settings/options might be broken or missing, use at your own risk. Suggestions and improvements welcome.
 
 
 =head2 Author
@@ -16,7 +16,8 @@
     Will manage the usual rhel & centos ssh server & client setup. 
     Allows you to manage sshd with many config options.
     Allows you to manage ssh with a few config options.
-    Default settings will give you a chroot sftp environment for any user added to the "sftponly" group to their home dir.
+    Default settings will give you a chroot sftp environment for any user 
+    added to the "sftponly" group to their home dir.
 
 
 =head2 Manages the following services:
