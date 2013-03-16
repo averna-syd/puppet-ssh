@@ -1,8 +1,5 @@
 =pod
 
-
-=head2 IMPORTANT: This is a first round test module. Some settings/options might be broken or missing, use at your own risk. Suggestions and improvements welcome.
-
 =head2 Puppet ssh server & client module
 
 
