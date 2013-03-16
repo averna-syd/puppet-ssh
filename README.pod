@@ -12,6 +12,7 @@
     Default settings will give you a chroot sftp environment for any user 
     added to the "sftponly" group to their home dir.
 
+    Currently only works in RHEL & CentOS.
 
 =head2 Manages the following services:
 
