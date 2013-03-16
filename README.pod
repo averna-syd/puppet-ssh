@@ -1,0 +1,107 @@
+=pod
+
+
+=head1 IMPORTANT: This is a first round test module. Some settings/options might be broken or missing, use at your own risk. Suggestions and improvements welcome.
+
+
+=head2 Author
+
+    Sarah Fuller
+    sarah@averna.id.au
+
+
+=head2 Puppet ssh server & client module
+
+
+    Will manage the usual rhel & centos ssh server & client setup. 
+    Allows you to manage sshd with many config options.
+    Allows you to manage ssh with a few config options.
+    Default settings will give you a chroot sftp environment for any user added to the "sftponly" group to their home dir.
+
+
+=head2 Manages the following services:
+
+=over 2
+
+=item *
+sshd
+
+=back
+
+
+=head2 Manages the following files:
+
+=over 2
+
+=item *
+/etc/ssh/sshd_config
+
+=item *
+/etc/ssh/ssh_config
+
+=item *
+/etc/ssh/banner
+
+=back
+
+
+=head2 ssh defaults
+
+ params:
+    NO PARAMS, you'll inherent all the default ones.
+ 
+ Usage: 
+    include ssh::defaults
+
+
+=head2 sshd
+
+ params:
+   $port           - optional - int (defaut: 22)
+   $listen_ipv4    - optional - ipv4 adr (default: 0.0.0.0)
+   $protocol       - optional - 1|2 (default: 2)
+   $rsa_auth       - optional - yes|no (default: yes)
+   $pub_key        - optional - yes|no (default: yes)
+   $permit_root    - optional - yes|no (default: no)
+   $password_auth  - optional - yes|no (default: no)
+   $xforward       - optional - yes|no (default: no)
+   $sftp_subsystem - optional - str (default: sftp   internal-sftp)
+   $sftp_group     - optional - char (default: sftponly)
+   $chroot_dir     - optional - char (default: %h)
+   $force_command  - optional - char (default: internal-sftp)
+   $ensure         - required - running|stopped
+
+ Usage:
+  ssh::server { "conf":
+    port           => "22",
+    listen_ipv4    => "0.0.0.0",
+    rsa_auth       => "yes",
+    password_auth  => "yes",
+    permit_root    => "no",
+    ensure         => "running",
+    
+  }
+
+
+=head2 ssh
+
+ Params:
+   $host           - optional - regex (default: *)
+   $rsa_auth       - optional - yes|no (default: yes)
+   $password_auth  - optional - yes|no (default: yes)
+   $protocol       - optional - int (default: 2)
+   $escape_char    - optional - char (default: ~)
+
+ Usage:
+  ssh::client { "conf":
+    host           => "*",
+    rsa_auth       => "yes",
+    password_auth  => "yes",
+    protocol       => "2",
+    escape_char    => "~",
+  }
+
+
+=cut
+
+
